@@ -4,6 +4,7 @@ import TabContent from "../layout/tabContent/TabContent";
 import classes from "./Homeview.module.css";
 
 const HomeView = props => {
+
     return <div className={classes.Body}>
         <Header/>
         <TabContent/>
