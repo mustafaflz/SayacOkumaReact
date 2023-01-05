@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Anasayfa', 'Gruplama', 'Endeks', 'Tüketim', 'Akım', 'Dilek/Şikayet/Öneri'];
+const pages = ['Anasayfa', 'Gruplama', 'Endex', 'Tüketim', 'Akım', 'Dilek/Şikayet/Öneri'];
 const settings = ['Profil', 'Hesap', 'Çıkış'];
 
 
