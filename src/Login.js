@@ -24,29 +24,32 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const config = {
-            headers:{'Content-Type': 'application/json',
-              username: 'mustafa.filiz',
-              password: '123456',
-              withCredentials: true
+        const headers = {
+            withCredentials: true,
+            headers:{
+
+                'username': 'mustafa.filiz',
+                'password': '123456'
             }
-          };
+        };
         try {
-            const response = await axios.get(LOGIN_URL,
-               //JSON.stringify({headers: { 'username':user, 'password':pwd} }),
-               {
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'username':user,
-                        'password':pwd
-                    },
-                    withCredentials: true
-                }
+            const response = await axios.post(LOGIN_URL,{
+
+                'username':user,
+                'password':pwd
+            },
+            {
+                headers: { 
+                    'Content-Type': 'application/json'
+            },
+            
+                withCredentials: true
+            }
                 
             );
             console.log(JSON.stringify(response?.data));
             console.log(JSON.stringify(response));
-            console.log( JSON.stringify({ 'username':user, 'password':pwd }));
+            console.log(JSON.stringify({headers: { 'username':user, 'password':pwd} }));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
             setAuth({ user, pwd, roles, accessToken });
